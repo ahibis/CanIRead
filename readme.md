@@ -42,3 +42,4 @@ right arrow - I don't know
 - Electron.js
 - Material UI
 - axios
+- lodash
