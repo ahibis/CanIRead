@@ -1,0 +1,64 @@
+{
+  "name": "caniread",
+  "private": true,
+  "version": "0.1.0",
+  "author": "ahibis<pokesteve31@gmail.com>",
+  "main": "main.js",
+  "description": "the app for assessing the vocabulary needed to read a particular book",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:electron": " cross-env ELECTRON=true vite build",
+    "electron": "yarn build:electron &&cross-env IS_DEV=true electron .",
+    "electron:builder": "electron-builder",
+    "app:build": "yarn build:electron && yarn electron:builder",
+    "electron:dev": "concurrently -k \" yarn dev\" \"cross-env IS_DEV=true server=true electron .\"",
+    "build:docs": "cross-env DOCS=true vite build"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.1",
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "electron": "^19.0.1",
+    "electron-builder": "^23.0.3",
+    "typescript": "^4.6.3",
+    "concurrently": "^7.2.1",
+    "cross-env": "^7.0.3",
+    "vite": "^2.9.9"
+  },
+  "build": {
+    "appId": "caniread.ahibis",
+    "productName": "CanIRead",
+    "copyright": "Copyright © 2021 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "icon": "./public/favicon.ico"
+    },
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    }
+  }
+}
