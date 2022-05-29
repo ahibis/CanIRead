@@ -18,6 +18,7 @@ export default ({ books, selectBook }: IProps) => {
       >
         {books?.map((book, i) => (
           <ListItem key={i} onClick={()=>selectBook && selectBook(book)}
+          title="click to select"
           sx={{cursor:"pointer"}}>
             <ListItemText>{book.name}</ListItemText>
           </ListItem>

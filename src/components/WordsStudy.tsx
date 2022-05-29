@@ -21,6 +21,13 @@ export default function wordsStudy({ selectedBook }: IParams) {
   const [knowFamiliarWords, setKnowFamiliarWords] = useState(0);
   const [familiarWords, setFamiliarWords] = useState<string[]>([]);
   const [noFamiliarWords, setNoFamiliarWords] = useState<string[]>([]);
+  useEffect(()=>{
+    setIndex(0)
+    setKnowCount(0)
+    setAllCount(0)
+    setKnowFamiliarWords(0)
+  },[selectedBook])
+
   const word = useMemo(
     () => {
       const word = selectedBook?.quantityEncountered[index]
@@ -91,6 +98,7 @@ export default function wordsStudy({ selectedBook }: IParams) {
                 sx={{margin:"100px 0px"}}
                 component="div"
                 align="center"
+                title="word(the number of times a word occurs in the text)"
               >
                 {word[0]} ({word[1]})
               </Typography>
@@ -99,12 +107,12 @@ export default function wordsStudy({ selectedBook }: IParams) {
             )}
             <Grid container justifyContent="space-around">
               <Grid item>
-                <Button variant="contained" color="info" onClick={iDontKnow}>
+                <Button variant="contained" title="[left arrow key]" size="large" color="info" onClick={iDontKnow}>
                   I don't know
                 </Button>
               </Grid>
               <Grid item>
-                <Button variant="contained" color="success" onClick={iKnow}>
+                <Button variant="contained" title="[right arrow key]" size="large" color="success" onClick={iKnow}>
                   I know
                 </Button>
               </Grid>
