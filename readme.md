@@ -3,7 +3,7 @@ the app for assessing the vocabulary needed to read a particular book.
 ### [LINK TO WEBSITE](https://ahibis.github.io/CanIRead/)
 ![picture](/github/site.png)
 
-![release](https://img.shields.io/github/realese/ahibis/CanIRead.svg)
+![release](https://img.shields.io/github/package-json/v/ahibis/CanIRead)
 ![made with](https://img.shields.io/badge/Made%20with-React-1f425f.svg)
 ![made with](https://img.shields.io/badge/Made%20with-typescript-yellow.svg)
 ### instruction
