@@ -23,9 +23,9 @@ right arrow - I don't know
 - [ ] ios version
 
 ### Launch project
-1. download node 14+
-2. yarn
-3. yarn dev
+1. download node v14+
+2. npm
+3. npm run dev
 
 ## Scripts 
 - yarn dev - launch dev version on browser
