@@ -24,7 +24,7 @@ right arrow - I don't know
 
 ### Launch project
 1. download node v14+
-2. npm
+2. npm install
 3. npm run dev
 
 ## Scripts 
